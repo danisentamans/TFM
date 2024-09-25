@@ -1,0 +1,41 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: var(--background-gradient), url('../assets/images/cabecero.jpg');
+    color: var(--text-color-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control input,
+.form-control select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    
+}
+
+.form-control button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.form-control button:hover {
+    background-color: var(--secondary-color);
+}

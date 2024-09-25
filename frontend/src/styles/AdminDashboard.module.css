@@ -1,0 +1,50 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: var(--background-gradient), url('../assets/images/cabecero.jpg');
+    color: var(--text-color-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color: white;
+}
+
+.table th {
+    background-color: #c7a572;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.actions button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+

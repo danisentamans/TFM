@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: my_mysql_container
+    ports:
+      - "3366:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: R00tP@ss1234.$
+      MYSQL_DATABASE: compose-db  # Nombre de la base de datos
+      MYSQL_USER: dsentamans  # Usuario de la base de datos
+      MYSQL_PASSWORD: UserP@ss1234.$  # Contraseña para el usuario
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persistir los datos en un volumen
+
+volumes:
+  mysql-data:
+    driver: local  # Esto crea un volumen persistente en tu máquina local

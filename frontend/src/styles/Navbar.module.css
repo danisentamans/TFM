@@ -1,0 +1,89 @@
+:root {
+  --primary-color: #a37b59;
+  --secondary-color: #d3b8a4;
+  --text-color-light: #fff0e1;
+  --text-color-dark: #3e2a1a;
+  --background-color: hsl(25, 19%, 83%);
+  --accent-color: #e2a357;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background-color: var(--background-color);
+  color: var(--text-color-light);
+  padding: 5px 0;
+  text-align: center;
+  min-height: 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 8px var(--shadow-color);
+}
+
+.menuItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.menuItems li {
+  display: inline;
+}
+
+.menuItems a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.menuItems a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.menuToggleCheckbox {
+  display: none;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+      display: block;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text-color-light);
+      margin-left: auto;
+  }
+
+  .menuItems {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      background-color: var(--background-color);
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      padding: 15px 0;
+      box-shadow: 0px 4px 8px var(--shadow-color);
+  }
+
+  .menuItems li {
+      display: block;
+      margin: 15px 0;
+  }
+
+  .menuToggleCheckbox:checked ~ .menuItems {
+      display: flex;
+  }
+}

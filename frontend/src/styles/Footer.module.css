@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #a37b59;
+  --secondary-color: #d3b8a4;
+  --text-color-light: #fff0e1;
+  --text-color-dark2: #3e2a1a;
+  --background-color: #4a3b31;
+  --accent-color: #e2a357;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color-dark);
+  padding: 0px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px -2px 8px var(--shadow-color);
+}
+
+.container_footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0;
+}
+
+.copyRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.copyRight p {
+  margin-top: 7px;
+  color: var(--text-color-dark2);
+}
+
+.copyRight a {
+  color: var(--text-color-light);
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.copyRight a:hover {
+  color: var(--accent-color);
+}

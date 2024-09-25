@@ -1,0 +1,98 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px var(--shadow-color);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 30%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+}
+
+.prevButton,
+.nextButton {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    z-index: 1000;
+}
+
+.prevButton {
+    left: 10px;
+}
+
+.nextButton {
+    right: 10px;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .slide img {
+        height: 250px;
+    }
+
+    .prevButton,
+    .nextButton {
+        padding: 8px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}
+

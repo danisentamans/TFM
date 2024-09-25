@@ -1,0 +1,162 @@
+/* Contenedor principal de la noticia */
+:root {
+    --text-color-light: #fff0e1;
+    --text-color-dark2: #3e2a1a;
+    --primary-color: #a37b59;
+    --secondary-color: #d3b8a4;
+    --accent-color: #e2a357;
+    --background-overlay-color: rgba(0, 0, 0, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --background-gradient: linear-gradient(135deg, rgba(163, 123, 89, 0.9), rgba(61, 44, 29, 0.8));
+}
+
+.container {
+    all: inherit;
+
+}
+
+.news-container {
+    max-width: 900px;
+    margin-top: 10px;
+    padding: 30px;
+    background-image: var(--background-gradient), url('../assets/images/cabecero.jpg');
+    color: #333; /* Texto oscuro para buena legibilidad */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif; /* Fuente clásica para un estilo elegante */
+}
+
+/* Estilo para el título de las noticias */
+.news-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+/* Estilo para el título de las noticias */
+.news-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color-dark2);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 2px solid var(--text-color-dark2);
+    padding-bottom: 10px;
+}
+
+/* Estilo para el título de las noticias */
+.news-container p {
+    color: var(--text-color-dark2);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Eliminar el estilo de lista predeterminado */
+.news-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de la lista */
+.news-container li {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para cada noticia */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.news-container li:hover {
+    transform: translateY(-5px); /* Efecto sutil de hover */
+}
+
+/* Estilo para las imágenes dentro de los elementos de la lista */
+.news-container .news-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para imágenes */
+}
+
+/* Estilo para los enlaces */
+.news-container .news-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+/* Efecto hover para los enlaces */
+.news-container .news-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para los botones en el contenedor de noticias */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.editButton, .deleteButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.editButton {
+    background-color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.editButton:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px);
+}
+
+.deleteButton {
+    background-color: var(--secondary-color);
+}
+
+.deleteButton:hover {
+    background-color: darken(var(--secondary-color), 10%);
+    transform: translateY(-2px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .news-container {
+        margin: 120px 20px 80px;
+        padding: 15px;
+    }
+    
+    .news-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .news-container li img {
+        border-radius: 5px;
+    }
+
+    .news-container .news-link, .news-container .deleteButton {
+        font-size: 0.875rem;
+        padding: 8px 12px;
+    }
+}

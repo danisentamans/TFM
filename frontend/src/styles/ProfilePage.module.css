@@ -1,0 +1,78 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: var(--background-gradient), url('../assets/images/cabecero.jpg');
+    color: var(--text-color-light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+p {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-right: 50px;
+    gap: 15px;
+    background-image: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+
+.form input::placeholder,
+.form select::placeholder {
+    color: var(--text-color-light-register); /* Cambia esto al color que prefieras */
+    opacity: 1; /* Asegura que el color sea completamente opaco */
+}
+
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+button[type="button"] {
+    background-color: var(--button-bg-dark);
+    color: white;
+}
+
+button[type="button"]:hover {
+    background-color: var(--primary-color);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tareafinal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm start",
+    "client": "cd frontend && npm run dev",
+    "install-all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "tareafinal": "file:"
+  }
+}
