@@ -36,7 +36,7 @@ Sigue estos pasos para inicializar el proyecto en tu entorno local:
     Ejecuta el siguiente comando para instalar todas las dependencias necesarias del proyecto:
 
     ```bash
-    npm install
+    npm run install-all
     ```
 
 3. **Configurar las variables de entorno**
