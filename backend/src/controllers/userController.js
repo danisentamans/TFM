@@ -62,6 +62,18 @@ exports.updateToAdmin = async (req, res) => {
   }
 };
 
+exports.deleteUserById = async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json({ message: "User deleted" });
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
 exports.deleteAuthenticatedUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.user.userId);

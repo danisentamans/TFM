@@ -38,6 +38,7 @@ const AdminDashboard = () => {
                         Authorization: `Bearer ${user.token}`
                     }
                 };
+                
                 await axios.delete(`http://localhost:5000/api/users/${userId}`, config);
                 setUsers(users.filter(user => user._id !== userId));
             } catch (error) {

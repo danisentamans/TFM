@@ -26,12 +26,19 @@ const Register = () => {
   });
   const navigate = useNavigate();
 
+  const [popupVisible, setPopupVisible] = useState(false);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+  };
+
+  const handleAccept = () => {
+    setPopupVisible(false);
+    navigate("/login");
   };
 
   const handleSubmit = async (e) => {
@@ -42,7 +49,7 @@ const Register = () => {
         ...formData,
         phone: fullPhone,
       });
-      navigate("/login");
+      setPopupVisible(true);
     } catch (error) {
       console.error("Error registering", error);
     }
@@ -137,6 +144,14 @@ const Register = () => {
         <button type="submit">Registrarse</button>
         <p>¿Ya tienes una cuenta?  <Link to="/login"> Inicia sesión </Link></p>
       </form>
+      {popupVisible && (
+        <div className={styles.popup}>
+          <p>¡Gracias! Te has registrado correctamente</p>
+          <button onClick={handleAccept} className={styles.acceptButton}>
+            Aceptar
+          </button>
+        </div>
+      )}
     </div>
   );
 };

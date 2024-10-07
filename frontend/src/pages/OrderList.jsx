@@ -40,6 +40,20 @@ const OrderList = () => {
     fetchUserRole();
   }, [user]);
 
+  const fetchOrders = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/orders`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+        params: { status: filter }, // Pasar el filtro como parámetro
+      });
+      setOrders(response.data);
+    } catch (error) {
+      setError("Error fetching orders");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const fetchOrders = async () => {
       try {
@@ -101,9 +115,11 @@ const OrderList = () => {
     }
   };
 
-  const handleAccept = () => {
+  const handleAccept = async () => {
     setPopupVisible(false);
-    navigate("/orders");
+    // Recargamos la misma página para ver el pedido pagado
+    // window.location.reload();
+    await fetchOrders();
   };
 
   const onPayPalSuccess = async (details, orderId) => {
